@@ -1,7 +1,7 @@
 // userService.js
 
 /**
- * Fetches user score safely.
+ * Fetches user score safely. This is a mock function that returns a promise that resolves to the user's score.
  * @param {number} userId 
  * @returns {Promise<number>}
  */
