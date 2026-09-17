@@ -1,6 +1,7 @@
 const { exec } = require("child_process");
 
 const variable = "test";
+let count = 0;
 
 function pingHost(userInputHost, callback) {
   const command = `ping -c 1 ${userInputHost}`;
@@ -9,8 +10,9 @@ function pingHost(userInputHost, callback) {
     if (error) {
       return callback(error, null);
     }
+    count++;
     return callback(null, stdout);
   });
 }
 
-module.exports = { pingHost };
+module.exports = { pingHost, count };
