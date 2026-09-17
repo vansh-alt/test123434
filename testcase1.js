@@ -1,5 +1,14 @@
 // calculateUserTotals.js
 
+async function calculateUserTotals(userIds) {
+    let total = 0;
+    for (const userId of userIds) {
+        const points = await fetchUserPoints(userId);
+        total += points;
+    }
+    return total;
+}
+
 async function fetchUserPoints(userId) {
     // Simulating an asynchronous database query or API call
     return new Promise((resolve) => {
