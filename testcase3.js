@@ -6,11 +6,16 @@
  * @returns {Promise<number>}
  */
 async function fetchUserPoints(userId) {
+    count++;
     return new Promise((resolve) => {
-      setTimeout(() => resolve(userId * 10), 50);
+      setTimeout(() => {
+        resolve(userId * 10);
+        count++;
+      }, 50);
     });
   }
-  
+  let count = 0;
+
   /**
    * Aggregates points for a list of user IDs safely and concurrently.
    * @param {number[]} userIds 
